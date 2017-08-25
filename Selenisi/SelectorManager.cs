@@ -3,16 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 
 namespace Selenisi
 {
-    public class WebDriverRunner
+    class SelectorManager
     {
-        public static IWebDriver StartWebDriver()
+        public static OpenQA.Selenium.By GetSeleniumById(By selenisiBy)
         {
-            return new ChromeDriver();
+            return OpenQA.Selenium.By.Id(selenisiBy.Locator);
         }
     }
 }

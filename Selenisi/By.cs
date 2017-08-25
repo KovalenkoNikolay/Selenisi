@@ -3,18 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 
 namespace Selenisi
 {
-    class WebDriverStore
+    public class By
     {
-        public static IWebDriver WebDriver { get; set; }
+        internal string Locator;
 
-        public static void InitWebDriver()
+        public static By Id(string id)
         {
-            WebDriver = new ChromeDriver();
+            return new By
+            {
+                Locator = id
+            };
         }
     }
 }
